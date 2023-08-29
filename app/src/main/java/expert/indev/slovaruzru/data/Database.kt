@@ -28,8 +28,8 @@ abstract class MyDatabase : RoomDatabase() {
             }
 
             synchronized(this) {
-                val instance = Room.databaseBuilder(context,  MyDatabase::class.java, "db.db")
-                    .allowMainThreadQueries()
+                val instance = Room.databaseBuilder(context,  MyDatabase::class.java, "my_db.db")
+                    .createFromAsset("db.db")
                     .build()
                 INSTANCE = instance
                 return instance

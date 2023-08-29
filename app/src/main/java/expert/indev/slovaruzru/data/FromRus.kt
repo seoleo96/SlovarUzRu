@@ -1,5 +1,6 @@
 package expert.indev.slovaruzru.data
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
@@ -14,9 +15,9 @@ data class FromRus(
     @ColumnInfo("_id")
     val _id: Int = 0,
     @ColumnInfo("word")
-    val word: String,
+    val word: String?,
     @ColumnInfo("definition")
-    val definition: String,
+    val definition: String?,
 )
 
 @Entity(
@@ -27,9 +28,9 @@ data class ToRus(
     @ColumnInfo("_id")
     val _id: Int = 0,
     @ColumnInfo("word")
-    val word: String,
+    val word: String?,
     @ColumnInfo("definition")
-    val definition: String,
+    val definition: String?,
 )
 
 @Entity(
@@ -40,7 +41,7 @@ data class ToRusLat(
     @ColumnInfo("_id")
     val _id: Int = 0,
     @ColumnInfo("word")
-    val word: String,
+    val word: String?,
     @ColumnInfo("definition")
-    val definition: String,
+    val definition: String?,
 )
