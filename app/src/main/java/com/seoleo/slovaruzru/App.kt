@@ -1,16 +1,12 @@
-package expert.indev.slovaruzru
+package com.seoleo.slovaruzru
 
 import android.app.Application
 import android.util.Log
-import expert.indev.slovaruzru.data.MyDatabase
+import com.seoleo.slovaruzru.data.MyDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.io.File
-import java.io.FileOutputStream
-import java.io.InputStream
-import java.io.OutputStream
 
 class App : Application() {
 

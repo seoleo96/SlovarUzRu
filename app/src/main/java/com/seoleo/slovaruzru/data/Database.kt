@@ -1,4 +1,4 @@
-package expert.indev.slovaruzru.data
+package com.seoleo.slovaruzru.data
 
 import android.content.Context
 import androidx.room.Database

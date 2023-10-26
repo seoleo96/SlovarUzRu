@@ -1,4 +1,4 @@
-package expert.indev.slovaruzru
+package com.seoleo.slovaruzru
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

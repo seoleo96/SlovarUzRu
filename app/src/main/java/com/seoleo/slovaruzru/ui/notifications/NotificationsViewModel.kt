@@ -1,4 +1,4 @@
-package expert.indev.slovaruzru.ui.notifications
+package com.seoleo.slovaruzru.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

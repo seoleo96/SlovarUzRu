@@ -1,4 +1,4 @@
-package expert.indev.slovaruzru
+package com.seoleo.slovaruzru
 
 import org.junit.Test
 

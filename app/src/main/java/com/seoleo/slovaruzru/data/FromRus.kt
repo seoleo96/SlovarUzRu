@@ -1,9 +1,7 @@
-package expert.indev.slovaruzru.data
+package com.seoleo.slovaruzru.data
 
-import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Index
 import androidx.room.PrimaryKey
 
 
