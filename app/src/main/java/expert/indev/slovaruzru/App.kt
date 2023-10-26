@@ -20,13 +20,14 @@ class App : Application() {
         val db = MyDatabase.getDatabase(applicationContext)
         CoroutineScope(Dispatchers.IO).launch{
             db.storageDao().getAllFlow().collectLatest {
-                for (i in  it){
-
-                    Log.e("TAG", "onCreate: $i")
-                    if (i.word == "заорать") {
-                        break
-                    }
-                }
+                Log.e("TAG", "onCreate: ${it.size}")
+//                for (i in  it){
+//
+//                    Log.e("TAG", "onCreate: $i")
+//                    if (i.word == "уложиться") {
+//                        break
+//                    }
+//                }
             }
         }
     }
