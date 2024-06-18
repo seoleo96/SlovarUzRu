@@ -3,23 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_to_uzb">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.seoleo.slovaruzru.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_to_uzb"
+        android:name="com.seoleo.slovaruzru.ui.touzb.ToUzbFragment"
+        android:label="@string/title_to_uzb"
+        tools:layout="@layout/fragment_to_uzb" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.seoleo.slovaruzru.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.seoleo.slovaruzru.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_to_rus_lat"
+        android:name="com.seoleo.slovaruzru.ui.toruslat.ToRusLatFragment"
+        android:label="@string/title_to_rus"
+        tools:layout="@layout/fragment_to_rus_lat" />
 </navigation>

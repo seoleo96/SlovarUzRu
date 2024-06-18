@@ -1,22 +1,26 @@
-package com.seoleo.slovaruzru.data
+package com.seoleo.slovaruzru.data.cache
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.seoleo.slovaruzru.data.cache.dao.FromRusDao
+import com.seoleo.slovaruzru.data.cache.dao.ToRusLatDao
+import com.seoleo.slovaruzru.data.cache.entity.FromRusEntity
+import com.seoleo.slovaruzru.data.cache.entity.ToRusLatEntity
 
 @Database(
     entities = [
-        ToRus::class,
-        ToRusLat::class,
-        FromRus::class,
+        ToRusLatEntity::class,
+        FromRusEntity::class,
     ],
     version = 1,
     exportSchema = false
 )
 abstract class MyDatabase : RoomDatabase() {
 
-    abstract fun storageDao(): FromRusDao
+    abstract fun toUzbDao(): FromRusDao
+    abstract fun toRusLatDao(): ToRusLatDao
 
     companion object {
         @Volatile
@@ -28,7 +32,7 @@ abstract class MyDatabase : RoomDatabase() {
             }
 
             synchronized(this) {
-                val instance = Room.databaseBuilder(context,  MyDatabase::class.java, "my_db.db")
+                val instance = Room.databaseBuilder(context, MyDatabase::class.java, "my_db.db")
                     .createFromAsset("db.db")
                     .build()
                 INSTANCE = instance

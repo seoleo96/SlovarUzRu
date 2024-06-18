@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'expert.indev.slovaruzru'
+    namespace 'com.seoleo.slovaruzru'
     compileSdk 33
 
     defaultConfig {
-        applicationId "expert.indev.slovaruzru"
+        applicationId "com.seoleo.slovaruzru"
         minSdk 21
         targetSdk 33
         versionCode 1
