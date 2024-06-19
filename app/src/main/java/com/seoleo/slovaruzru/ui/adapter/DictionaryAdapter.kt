@@ -33,17 +33,37 @@ class DictionaryAdapter(
         holder.set(items[position])
     }
 
+    override fun onBindViewHolder(holder: DictionaryViewHolder, position: Int, payloads: MutableList<Any>) {
+        if(payloads.isEmpty()){
+            super.onBindViewHolder(holder, position, payloads)
+        }else{
+            val result = payloads.firstOrNull()
+            if(result is DictionaryDiffUtil.DictionaryContentPayload.DefinitionChanged){
+                holder.setOpenedState(result.model)
+            }
+        }
+    }
+
     override fun getItemCount() = items.size
 
     inner class DictionaryViewHolder(private val dictionaryBinding: LayoutDictionaryBinding) :
         RecyclerView.ViewHolder(dictionaryBinding.root) {
+
         fun set(model: DictionaryModel) {
-            dictionaryBinding.definition.text = model.definition
             dictionaryBinding.word.text = model.word
+            setOpenedState(model)
+            dictionaryBinding.definition.text = model.definition
+        }
+
+        fun setOpenedState(model: DictionaryModel) {
+            dictionaryBinding.definition.isVisible = model.isOpened
+            setDictionaryClickedState(model)
+        }
+
+        private fun setDictionaryClickedState(model: DictionaryModel) {
             dictionaryBinding.rootLayout.setOnClickListener {
                 dictionaryClicked.invoke(model)
             }
-            dictionaryBinding.definition.isVisible = model.isOpened
         }
     }
 }

@@ -17,11 +17,21 @@ class DictionaryDiffUtil(
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition] == newList[newItemPosition]
-//        val oldModel = oldList[oldItemPosition]
-//        val newModel = newList[newItemPosition]
-//        return oldModel.id == newModel.id &&
-//                oldModel.word == newModel.word &&
-//                oldModel.definition == newModel.definition &&
-//                oldModel.isOpened == newModel.isOpened
+    }
+
+    override fun getChangePayload(oldItemPosition: Int, newItemPosition: Int): Any? {
+        val oldModel = oldList[oldItemPosition]
+        val newModel = newList[newItemPosition]
+        return when {
+            oldModel.isOpened != newModel.isOpened -> {
+                DictionaryContentPayload.DefinitionChanged(newModel)
+            }
+
+            else -> null
+        }
+    }
+
+    sealed class DictionaryContentPayload{
+        class DefinitionChanged(val model : DictionaryModel)
     }
 }

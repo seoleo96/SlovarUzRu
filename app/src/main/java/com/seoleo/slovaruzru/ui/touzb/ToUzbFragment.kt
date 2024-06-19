@@ -11,8 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.seoleo.slovaruzru.R
 import com.seoleo.slovaruzru.databinding.FragmentToUzbBinding
 import com.seoleo.slovaruzru.ui.adapter.DictionaryAdapter
+import com.seoleo.slovaruzru.ui.adapter.DictionaryItemDecoration
 import kotlinx.coroutines.launch
 
 
@@ -54,7 +56,10 @@ class ToUzbFragment : Fragment() {
             }
         )
         binding.dictionaryRecyclerView.adapter = adapter
-        binding.dictionaryRecyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        binding.dictionaryRecyclerView.addItemDecoration(
+            DividerItemDecoration(requireContext(),
+                DividerItemDecoration.VERTICAL)
+        )
     }
 
     override fun onDestroyView() {

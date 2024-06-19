@@ -1,7 +1,11 @@
 package com.seoleo.slovaruzru.ui.adapter
 
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.Rect
 import android.view.View
+import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 
 class DictionaryItemDecoration(
